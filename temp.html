@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Convertisseur</h2>
+
+
+  <label for="fname">°C:</label>
+  <input type="text" id="c" ><br><br>
+  <label for="lname">°F:</label>
+  <input type="text" id="f" ><br><br>
+  <button onclick="myFunction()">To °C</button>
+  <button>To °F</button>
+  <button>Reset</button>
+
+ 
+<script>
+function myFunction() {
+  document.getElementById("f").value = (Number(document.getElementById("c").value) − 32) × 5/9
+}
+
+</script>
+
+
+</body>
+</html>
