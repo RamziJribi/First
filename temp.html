@@ -9,17 +9,29 @@
   <input type="text" id="c" ><br><br>
   <label for="lname">°F:</label>
   <input type="text" id="f" ><br><br>
-  <button onclick="myFunction()">To °C</button>
-  <button>To °F</button>
-  <button>Reset</button>
+  <button onclick="toC()">To °C</button>
+  <button onclick="toF()">To °F</button>
+  <button onclick="reset()">Reset</button>
 
  
 <script>
-function myFunction() {
-  document.getElementById("f").value = (Number(document.getElementById("c").value) - 32) * 5/9};
+function toC() {
+  document.getElementById("c").value = (Number(document.getElementById("f").value) - 32) * 5/9;
+  }
+
+
+function toF() {
+  document.getElementById("f").value = (Number(document.getElementById("c").value) * 9/5) + 32 ;
+  }
+  
+function reset() {
+document.getElementById("c").value = '';
+  document.getElementById("f").value = '';
+  }
 
 </script>
 
 
 </body>
 </html>
+
