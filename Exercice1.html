@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+  <label>Donner un nombre:</label>
+  <input  id="x" ><br><br>
+  
+  <button onclick="myFunction()">Ajouter dans la liste</button>
+    <button onclick="compute()">calculer</button><br><br>
+  <p id="demo"></p>
+  
+  <p id="longueur"></p>
+  <p id="somme"></p>
+  <p id="min"></p>
+  <p id="max"></p>
+  
+<script>
+const T = [];
+
+
+function myFunction() {
+T.push(document.getElementById("x").value);
+document.getElementById("demo").innerHTML = T;
+}
+
+function compute() {
+document.getElementById("longueur").innerHTML = T.length;
+var s=0;
+var min=Number(T[0]);
+var max=Number(T[0]);
+for (let i=0; i<T.length;i++)
+{
+	if(min>Number(T[i]))
+    {
+    	min=Number(T[i]);
+    }
+    else if (max<Number(T[i]))
+    {
+    	max=Number(T[i]);
+    }
+        
+	s=s+Number(T[i]);
+}
+document.getElementById("somme").innerHTML = "la somme = " + s;
+document.getElementById("min").innerHTML = "min = " + min;
+document.getElementById("max").innerHTML = "max = " + max;
+
+}
+
+</script>
+
+</body>
+</html>
