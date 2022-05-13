@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Class Method</h2>
+
+<p>How to define and use a Class method.</p>
+
+<p id="demo"></p>
+
+<script>
+class Car { /* définition de la classe */
+  constructor(name, year) { /*constructeur*/
+    this.name = name; /*déclaration des attributs*/
+    this.year = year;
+
+  }
+  age() { /*déclaration d'une méthode ou fonction membre*/
+    let date = new Date();
+    console.log(date.getFullYear());
+    return date.getFullYear() - this.year;
+  }
+}
+
+let myCar = new Car("Ford", 2014); /*déclaration d'un objet*/
+document.getElementById("demo").innerHTML =
+"My car is " + myCar.age() + " years old."; /* on fait toujours des appels: objet.method ou objet.attribut */
+</script>
+
+</body>
+</html>
