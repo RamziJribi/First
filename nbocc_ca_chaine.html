@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Calculatrice</h2>
+
+  <label>Chaine 1:</label>
+  <input  id="chaine" ><br><br>
+   <label>Caracère:</label>
+  <input  id="caractere" ><br><br>
+  <button onClick="nbOcc(chaine.value,caractere.value)">Nb Occurence</button><br><br><br>
+	<p id="nbo"></p>
+  <script>
+  function nbOcc(ch,ca)
+  {
+  	let nb = 0 ;
+  	for (i in ch)
+    {
+    	
+    	if (ch[i] == ca)
+        	nb = nb + 1 ;
+        	
+    }
+  	console.log(" Nb occurence de " + ca + " dans " + ch + " = " + nb);
+    document.getElementById("nbo").innerHTML = nb;
+    
+  }
+  </script>
+
+</body>
+</html>
