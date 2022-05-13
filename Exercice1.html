@@ -15,6 +15,7 @@
   <p id="somme"></p>
   <p id="min"></p>
   <p id="max"></p>
+  <p id="tri"></p>
   
 <script>
 const T = [];
@@ -26,28 +27,50 @@ document.getElementById("demo").innerHTML = T;
 }
 
 function compute() {
-document.getElementById("longueur").innerHTML = T.length;
-var s=0;
-var min=Number(T[0]);
-var max=Number(T[0]);
-for (let i=0; i<T.length;i++)
-{
-	if(min>Number(T[i]))
-    {
-    	min=Number(T[i]);
-    }
-    else if (max<Number(T[i]))
-    {
-    	max=Number(T[i]);
-    }
-        
-	s=s+Number(T[i]);
-}
-document.getElementById("somme").innerHTML = "la somme = " + s;
-document.getElementById("min").innerHTML = "min = " + min;
-document.getElementById("max").innerHTML = "max = " + max;
+  document.getElementById("longueur").innerHTML = T.length;
+  var s=0;
+  var min=Number(T[0]);
+  var max=Number(T[0]);
+  for (let i=0; i<T.length;i++)
+  {
+      if(min>Number(T[i]))
+      {
+          min=Number(T[i]);
+      }
+      else if (max<Number(T[i]))
+      {
+          max=Number(T[i]);
+      }
 
+      s=s+Number(T[i]);
+  }
+  document.getElementById("somme").innerHTML = "la somme = " + s;
+  document.getElementById("min").innerHTML = "min = " + min;
+  document.getElementById("max").innerHTML = "max = " + max;
+  document.getElementById("tri").innerHTML =  tri(T);
 }
+
+
+function tri(Tab){
+	l=Tab.length;
+    for (let i=0; i<l-1; i++)
+    {
+    	for (let j=i+1; j<l;j++)
+        {
+        	if(Number(Tab[i])>Number(Tab[j]))
+            {
+            	let temp = Tab[i];
+                Tab[i]=Tab[j];
+                Tab[j]=temp;
+            }
+        	console.log(Tab);
+        }
+        console.log(Tab);
+    }
+    return Tab;
+}
+
+
 
 </script>
 
